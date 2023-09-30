@@ -1,0 +1,7 @@
+
+*.lock
+*.suo
+
+bin
+obj
+.vs

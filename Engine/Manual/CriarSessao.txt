@@ -1,0 +1,96 @@
+﻿Using Nhibernate;
+Using Nhibernate.Cfg;
+
+1 - Criar uma classe para a criação da session, esta classe deve ser publica. Em seguida atribuir quatro variaveis Configuration, IsessionFactory, Isessiion, Itransaction.
+
+Exemplo:
+
+private static Configuration config;
+private static IsessionFactory factory;
+private static ISession session;
+private static Itransaction transaction;
+
+Oque é cada coisa?
+
+Configuration, é como o nome já diz, a configuração para a conexão.
+IsessionFactory, é um objeto que cria uma Instancia apropriada apartir da Configuration.
+Isession, 
+Itransaction, usado para executar transaçoes.
+
+Para carregar o Configuration basta criar um Metodo void publico e estatico.
+
+Exemplo:
+
+public static void CarregarConfig()
+{
+	//presisamos primeiro instanciar a config
+	config = new Configuration();
+	//depois informar o Assembly 
+	config.AddAssembly("Assemble do Sistema");
+	//caso queira criar uma config via codigo deve ser usada a linha a seguir
+	
+	//Ecemplo adicionando linha de conexão
+	config.SetProperty(NHibernate.Cfg.Environment.ConnectionString, "");
+}
+
+Pronto o metodo de configuração esta pronto, presisamos criar uma seção. O Metodo para criar a sessao
+deve ser public static ISessionFactory e devemos nele verificar se a config é nula, se a factory é diferente
+de nula e retornar a factory.
+
+Exemplo
+
+public static ISessionFactory CriarSession()
+{
+	//caso a config esteja nula ele vai carregar a config
+	if (config == null)
+		CarregarConfig();
+    
+	//caso a factory ja esteja populada ela apenas retorna ela mesma
+	if(factory != null)
+		retur factory;
+
+	//aqui a config instancia uma nova Factory usando um metodo para criar a Session e jogando para a factory
+	factory = cofig.BuildSessionFactory();
+
+	//por fim tem que retorar a factory
+	retur factory;
+}
+
+Agora é preciso abrir a sessao para fazer transaçoes, usamos a ISession ela deve ser publica e estatica
+Exemplo:
+
+public static ISession AbrirSessao()
+{
+	//remos que retornar a ISessionFactory puxando seu metodo OpenSession()
+	//para isso que criamos um metodo para instanciar o ISessionFactory
+	//agora so presisamos retornar ele
+	return CriarSession().OpenSession();
+}
+
+Hambiente de configuração e sessao concluido
+
+
+████████████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████████████
+
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░░░░██████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░██████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░██████████████████████████████████████████░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░██████████████████████████████████████████████████░░░░░░░░░░░░░░░
+░░░░░░░░░░░████████████████████████████░░░░██████████████████████████░░░░░░░░░░░
+░░░░░░░█████████████████████████████░░░░░░░░░░███████████████████████████░░░░░░░
+░░░███████████████████████████████░░░░░░░░░░░░░░█████████████████████████████░░░
+█████████████████████████████████░░░░░████████░░░███████████████████████████████
+░░░███████████████████████████████░░░██░░░░░░░░░█████████████████████████████░░░
+░░░░░░░█████████████████████████████░░░░░░░░░░███████████████████████████░░░░░░░
+░░░░░░░░░░░████████████████████████████░░░░██████████████████████████░░░░░░░░░░░
+░░░░░░░░░░░░░░░██████████████████████████████████████████████████░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░██████████████████████████████████████████░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░██████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░░░░██████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░

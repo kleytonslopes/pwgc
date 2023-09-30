@@ -1,0 +1,214 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using FluentNHibernate.Mapping;
+using Engine.Entities;
+
+namespace Engine.Mapping
+{
+    class PermissionMap : ClassMap<Permissions>
+    {
+        public PermissionMap() 
+        {
+            Table("data_permission");
+            Id(x => x.Id).                  Column("perm_id");
+            Map(x => x.permCatCad).         Column("perm_cat_cad")         ;
+            Map(x => x.permCatCadInsert).   Column("perm_cat_cad_insert")  ;
+            Map(x => x.permCatCadVerify).   Column("perm_cat_cad_verify")  ;
+            Map(x => x.permCatCadCarg).     Column("perm_cat_cad_carg")    ;
+            Map(x => x.permCatCadCarg_1).   Column("perm_cat_cad_carg_1")  ;
+            Map(x => x.permCatCadCarg_2).   Column("perm_cat_cad_carg_2")  ;
+            Map(x => x.permCatCadCarg_3).   Column("perm_cat_cad_carg_3")  ;
+            Map(x => x.permCatCadCarg_4).   Column("perm_cat_cad_carg_4")  ;
+            Map(x => x.permCatCadCarg_5).   Column("perm_cat_cad_carg_5")  ;
+            Map(x => x.permCatCadRank).     Column("perm_cat_cad_rank")    ;
+            Map(x => x.permCatCadRank_1).   Column("perm_cat_cad_rank_1")  ;
+            Map(x => x.permCatCadRank_2).   Column("perm_cat_cad_rank_2")  ;
+            Map(x => x.permCatCadRank_3).   Column("perm_cat_cad_rank_3")  ;
+            Map(x => x.permCatCadRank_4).   Column("perm_cat_cad_rank_4")  ;
+            Map(x => x.permCatCadRank_5).   Column("perm_cat_cad_rank_5")  ;
+            Map(x => x.permCatCadRank_6).   Column("perm_cat_cad_rank_6")  ;
+            Map(x => x.permCatCadRank_7).   Column("perm_cat_cad_rank_7")  ;
+            Map(x => x.permCatCadRank_8).   Column("perm_cat_cad_rank_8")  ;
+            Map(x => x.permCatCadRank_9).   Column("perm_cat_cad_rank_9")  ;
+            Map(x => x.permCatCadStat).     Column("perm_cat_cad_stat")    ;
+            Map(x => x.permCatCadStat_1).   Column("perm_cat_cad_stat_1")  ;
+            Map(x => x.permCatCadStat_2).   Column("perm_cat_cad_stat_2")  ;
+            Map(x => x.permCatCadStat_3).   Column("perm_cat_cad_stat_3")  ;
+            Map(x => x.permCatCadStat_4).   Column("perm_cat_cad_stat_4")  ;
+            Map(x => x.permCatCadStat_5).   Column("perm_cat_cad_stat_5")  ;
+            Map(x => x.permCatCadStat_6).   Column("perm_cat_cad_stat_6")  ;
+            Map(x => x.permCatCadClass).    Column("perm_cat_cad_class")   ;
+            Map(x => x.permCatCadClass_1).  Column("perm_cat_cad_class_1") ;
+            Map(x => x.permCatCadClass_2).  Column("perm_cat_cad_class_2") ;
+            Map(x => x.permCatCadClass_3).  Column("perm_cat_cad_class_3") ;
+            Map(x => x.permCatCadClass_4).  Column("perm_cat_cad_class_4") ;
+            Map(x => x.permCatCadClass_5).  Column("perm_cat_cad_class_5") ;
+            Map(x => x.permCatCadClass_6).  Column("perm_cat_cad_class_6") ;
+            Map(x => x.permCatCadClass_7).  Column("perm_cat_cad_class_7") ;
+            Map(x => x.permCatCadClass_8).  Column("perm_cat_cad_class_8") ;
+            Map(x => x.permCatCadClass_9).  Column("perm_cat_cad_class_9") ;
+            Map(x => x.permCatCadClass_10). Column("perm_cat_cad_class_10");
+            Map(x => x.permCatCadClass_11). Column("perm_cat_cad_class_11");
+            Map(x => x.permCatCadClass_12). Column("perm_cat_cad_class_12");
+            Map(x => x.permCatCadReborn).   Column("perm_cat_cad_reborn")  ;
+            Map(x => x.permCatCadReborn_1). Column("perm_cat_cad_reborn_1");
+            Map(x => x.permCatCadReborn_2). Column("perm_cat_cad_reborn_2");
+            Map(x => x.permCatCadReborn_3). Column("perm_cat_cad_reborn_3");
+            Map(x => x.permCatCadReborn_4). Column("perm_cat_cad_reborn_4");
+            Map(x => x.permEditEdit).       Column("perm_edit_edit")       ;
+            Map(x => x.permEditAlter).      Column("perm_edit_alter")      ;
+            Map(x => x.permEditExclu).      Column("perm_edit_exclu")      ;
+            Map(x => x.permEditSetob).      Column("perm_edit_setob")      ;
+            Map(x => x.permEditCargo).      Column("perm_edit_cargo")      ;
+            Map(x => x.permEditCargo_1).    Column("perm_edit_cargo_1")    ;
+            Map(x => x.permEditCargo_2).    Column("perm_edit_cargo_2")    ;
+            Map(x => x.permEditCargo_3).    Column("perm_edit_cargo_3")    ;
+            Map(x => x.permEditCargo_4).    Column("perm_edit_cargo_4")    ;
+            Map(x => x.permEditCargo_5).    Column("perm_edit_cargo_5")    ;
+            Map(x => x.permEditRank).       Column("perm_edit_rank")       ;
+            Map(x => x.permEditRank_1).     Column("perm_edit_rank_1")     ;
+            Map(x => x.permEditRank_2).     Column("perm_edit_rank_2")     ;
+            Map(x => x.permEditRank_3).     Column("perm_edit_rank_3")     ;
+            Map(x => x.permEditRank_4).     Column("perm_edit_rank_4")     ;
+            Map(x => x.permEditRank_5).     Column("perm_edit_rank_5")     ;
+            Map(x => x.permEditRank_6).     Column("perm_edit_rank_6")     ;
+            Map(x => x.permEditRank_7).     Column("perm_edit_rank_7")     ;
+            Map(x => x.permEditRank_8).     Column("perm_edit_rank_8")     ;
+            Map(x => x.permEditRank_9).     Column("perm_edit_rank_9")     ;
+            Map(x => x.permEditStatus).     Column("perm_edit_status")     ;
+            Map(x => x.permEditStatus_1).   Column("perm_edit_status_1")   ;
+            Map(x => x.permEditStatus_2).   Column("perm_edit_status_2")   ;
+            Map(x => x.permEditStatus_3).   Column("perm_edit_status_3")   ;
+            Map(x => x.permEditStatus_4).   Column("perm_edit_status_4")   ;
+            Map(x => x.permEditStatus_5).   Column("perm_edit_status_5")   ;
+            Map(x => x.permEditStatus_6).   Column("perm_edit_status_6")   ;
+            Map(x => x.permEditClass).      Column("perm_edit_class")      ;
+            Map(x => x.permEditClass_1).    Column("perm_edit_class_1")    ;
+            Map(x => x.permEditClass_2).    Column("perm_edit_class_2")    ;
+            Map(x => x.permEditClass_3).    Column("perm_edit_class_3")    ;
+            Map(x => x.permEditClass_4).    Column("perm_edit_class_4")    ;
+            Map(x => x.permEditClass_5).    Column("perm_edit_class_5")    ;
+            Map(x => x.permEditClass_6).    Column("perm_edit_class_6")    ;
+            Map(x => x.permEditClass_7).    Column("perm_edit_class_7")    ;
+            Map(x => x.permEditClass_8).    Column("perm_edit_class_8")    ;
+            Map(x => x.permEditClass_9).    Column("perm_edit_class_9")   ;
+            Map(x => x.permEditClass_10).   Column("perm_edit_class_10")   ;
+            Map(x => x.permEditClass_11).   Column("perm_edit_class_11")   ;
+            Map(x => x.permEditClass_12).   Column("perm_edit_class_12")   ;
+            Map(x => x.permEditReborn).     Column("perm_edit_reborn")     ;
+            Map(x => x.permEditReborn_1).   Column("perm_edit_reborn_1")   ;
+            Map(x => x.permEditReborn_2).   Column("perm_edit_reborn_2")   ;
+            Map(x => x.permEditReborn_3).   Column("perm_edit_reborn_3")   ;
+            Map(x => x.permEditReborn_4).   Column("perm_edit_reborn_4")   ;
+            Map(x => x.permEditConsultar).  Column("perm_edit_search")     ;
+            Map(x => x.permAdmin).          Column("perm_admin")           ;
+            Map(x => x.permAdminUser).      Column("perm_admin_user")      ;
+            Map(x => x.permAdminCharacter). Column("perm_admin_character") ;
+            Map(x => x.permAdminEvent).     Column("perm_admin_event")     ;
+            Map(x => x.permAdminSystem).    Column("perm_admin_system")    ;
+            Map(x => x.permAdminGlobal).    Column("perm_admin_global")    ;
+
+
+
+
+
+
+
+        }
+    }
+}
+/*
+ * perm_id  AI PK 
+Map(x => x.permCatCad            ).Column("perm_cat_cad         ");
+Map(x => x.permCatCadInsert      ).Column("perm_cat_cad_insert  ");
+Map(x => x.permCatCadVerify      ).Column("perm_cat_cad_verify  ");
+Map(x => x.permCatCadCarg        ).Column("perm_cat_cad_carg    ");
+Map(x => x.permCatCadCarg_1      ).Column("perm_cat_cad_carg_1  ");
+Map(x => x.permCatCadCarg_2      ).Column("perm_cat_cad_carg_2  ");
+Map(x => x.permCatCadCarg_3      ).Column("perm_cat_cad_carg_3  ");
+Map(x => x.permCatCadCarg_4      ).Column("perm_cat_cad_carg_4  ");
+Map(x => x.permCatCadCarg_5      ).Column("perm_cat_cad_carg_5  ");
+Map(x => x.permCatCadRank        ).Column("perm_cat_cad_rank    ");
+Map(x => x.permCatCadRank_1      ).Column("perm_cat_cad_rank_1  ");
+Map(x => x.permCatCadRank_2      ).Column("perm_cat_cad_rank_2  ");
+Map(x => x.permCatCadRank_3      ).Column("perm_cat_cad_rank_3  ");
+Map(x => x.permCatCadRank_4      ).Column("perm_cat_cad_rank_4  ");
+Map(x => x.permCatCadRank_5      ).Column("perm_cat_cad_rank_5  ");
+Map(x => x.permCatCadRank_6      ).Column("perm_cat_cad_rank_6  ");
+Map(x => x.permCatCadRank_7      ).Column("perm_cat_cad_rank_7  ");
+Map(x => x.permCatCadRank_8      ).Column("perm_cat_cad_rank_8  ");
+Map(x => x.permCatCadRank_9      ).Column("perm_cat_cad_rank_9  ");
+Map(x => x.permCatCadStat        ).Column("perm_cat_cad_stat    ");
+Map(x => x.permCatCadStat_1      ).Column("perm_cat_cad_stat_1  ");
+Map(x => x.permCatCadStat_2      ).Column("perm_cat_cad_stat_2  ");
+Map(x => x.permCatCadStat_3      ).Column("perm_cat_cad_stat_3  ");
+Map(x => x.permCatCadStat_4      ).Column("perm_cat_cad_stat_4  ");
+Map(x => x.permCatCadStat_5      ).Column("perm_cat_cad_stat_5  ");
+Map(x => x.permCatCadStat_6      ).Column("perm_cat_cad_stat_6  ");
+Map(x => x.permCatCadClass       ).Column("perm_cat_cad_class   ");
+Map(x => x.permCatCadClass_1     ).Column("perm_cat_cad_class_1 "); 
+Map(x => x.permCatCadClass_2     ).Column("perm_cat_cad_class_2 "); 
+Map(x => x.permCatCadClass_3     ).Column("perm_cat_cad_class_3 "); 
+Map(x => x.permCatCadClass_4     ).Column("perm_cat_cad_class_4 "); 
+Map(x => x.permCatCadClass_5     ).Column("perm_cat_cad_class_5 "); 
+Map(x => x.permCatCadClass_6     ).Column("perm_cat_cad_class_6 "); 
+Map(x => x.permCatCadClass_7     ).Column("perm_cat_cad_class_7 "); 
+Map(x => x.permCatCadClass_8     ).Column("perm_cat_cad_class_8 "); 
+Map(x => x.permCatCadClass_9     ).Column("perm_cat_cad_class_9 "); 
+Map(x => x.permCatCadClass_10    ).Column("perm_cat_cad_class_10");  
+Map(x => x.permCatCadClass_11    ).Column("perm_cat_cad_class_11");  
+Map(x => x.permCatCadClass_12    ).Column("perm_cat_cad_class_12");  
+Map(x => x.permCatCadReborn      ).Column("perm_cat_cad_reborn  ");
+Map(x => x.permCatCadReborn_1    ).Column("perm_cat_cad_reborn_1");  
+Map(x => x.permCatCadReborn_2    ).Column("perm_cat_cad_reborn_2");  
+Map(x => x.permCatCadReborn_3    ).Column("perm_cat_cad_reborn_3");  
+Map(x => x.permCatCadReborn_4    ).Column("perm_cat_cad_reborn_4");  
+Map(x => x.permEditEdit          ).Column("perm_edit_edit       ");
+Map(x => x.permEditAlter         ).Column("perm_edit_alter      ");
+Map(x => x.permEditExclu         ).Column("perm_edit_exclu      ");
+Map(x => x.permEditSetob         ).Column("perm_edit_setob      ");
+Map(x => x.permEditCargo         ).Column("perm_edit_cargo      ");
+Map(x => x.permEditCargo_1       ).Column("perm_edit_cargo_1    ");
+Map(x => x.permEditCargo_2       ).Column("perm_edit_cargo_2    ");
+Map(x => x.permEditCargo_3       ).Column("perm_edit_cargo_3    ");
+Map(x => x.permEditCargo_4       ).Column("perm_edit_cargo_4    ");
+Map(x => x.permEditCargo_5       ).Column("perm_edit_cargo_5    ");
+Map(x => x.permEditRank          ).Column("perm_edit_rank       ");
+Map(x => x.permEditRank_1).Column("perm_edit_rank_1     ");
+Map(x => x.permEditRank_2).Column("perm_edit_rank_2     ");
+Map(x => x.permEditRank_3).Column("perm_edit_rank_3     ");
+Map(x => x.permEditRank_4).Column("perm_edit_rank_4     ");
+Map(x => x.permEditRank_5).Column("perm_edit_rank_5     ");
+Map(x => x.permEditRank_6).Column("perm_edit_rank_6     ");
+Map(x => x.permEditRank_7).Column("perm_edit_rank_7     ");
+Map(x => x.permEditRank_8).Column("perm_edit_rank_8     ");
+Map(x => x.permEditRank_9).Column("perm_edit_rank_9     ");
+Map(x => x.permEditStatus).Column("perm_edit_status     ");
+Map(x => x.permEditStatus_1).Column("perm_edit_status_1   ");
+Map(x => x.permEditStatus_2).Column("perm_edit_status_2   ");
+Map(x => x.permEditStatus_3).Column("perm_edit_status_3   ");
+Map(x => x.permEditStatus_4).Column("perm_edit_status_4   ");
+Map(x => x.permEditStatus_5).Column("perm_edit_status_5   ");
+Map(x => x.permEditStatus_6).Column("perm_edit_status_6   ");
+Map(x => x.permEditClass).Column("perm_edit_class      ");
+Map(x => x.permEditClass_1 ).Column("perm_edit_class_1    ");
+Map(x => x.permEditClass_2 ).Column("perm_edit_class_2    ");
+Map(x => x.permEditClass_3 ).Column("perm_edit_class_3    ");
+Map(x => x.permEditClass_4 ).Column("perm_edit_class_4    ");
+Map(x => x.permEditClass_5 ).Column("perm_edit_class_5    ");
+Map(x => x.permEditClass_6 ).Column("perm_edit_class_6    ");
+Map(x => x.permEditClass_7 ).Column("perm_edit_class_7    ");
+Map(x => x.permEditClass_8 ).Column("perm_edit_class_8    ");
+Map(x => x.permEditClass_9 ).Column("perm_edit_class_9    ");
+Map(x => x.permEditClass_10).Column("perm_edit_class_10   ");
+Map(x => x.permEditClass_11).Column("perm_edit_class_11   ");
+Map(x => x.permEditClass_12).Column("perm_edit_class_12   ");
+Map(x => x.permEditReborn  ).Column("perm_edit_reborn     ");
+Map(x => x.permEditReborn_1).Column("perm_edit_reborn_1   ");
+Map(x => x.permEditReborn_2).Column("perm_edit_reborn_2   ");
+Map(x => x.permEditReborn_3).Column("perm_edit_reborn_3   ");
+Map(x => x.permEditReborn_4).Column("perm_edit_reborn_4   ");
+ */
